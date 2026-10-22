@@ -51,7 +51,6 @@ snakemake = "*"
 
 # --- this study ---
 scikit-image = ">=0.24"     # thresholds, morphology, skeletonisation, marching cubes
-scipy = "*"
 
 # Pip-only deps go in [pypi-dependencies]. Conda-forge is preferred where available.
 # [pypi-dependencies]
