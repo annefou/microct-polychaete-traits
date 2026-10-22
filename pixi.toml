@@ -49,6 +49,11 @@ snakemake = "*"
 # geopandas = "*"            # vector I/O
 # dask = "*"                 # out-of-core / parallel
 
+# --- this study ---
+scikit-image = ">=0.24"     # thresholds, morphology, skeletonisation, marching cubes
+pillow = "*"                 # BMP/PNG slice stacks
+scipy = "*"
+
 # Pip-only deps go in [pypi-dependencies]. Conda-forge is preferred where available.
 # [pypi-dependencies]
 # pygbif = "*"               # GBIF occurrences
@@ -76,6 +81,9 @@ tests = { features = ["tests"], solve-group = "default" }
 
 [tasks]
 run = "snakemake --cores 1"
+# Micro-CT trait test (Faulwetter et al. 2013 scans, CC0, ~165 MB, MD5-checked). Work files in work/ (gitignored).
+microct-fetch = "python pipeline/fetch_faulwetter2013.py work"
+microct = { cmd = "python pipeline/traits_pipeline.py work && python pipeline/make_figure.py work", depends-on = ["microct-fetch"] }
 book = "myst build --html"
 lab = "jupyter lab"
 

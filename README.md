@@ -14,7 +14,16 @@
 > **Micro-computed tomography: Introducing new dimensions to taxonomy** — replication study.
 > Reference paper: [10.3897/zookeys.263.4261](https://doi.org/10.3897/zookeys.263.4261)
 
-This is a self-contained replication of the headline claim of the reference paper. It produces a reproducible computational pipeline, a Zenodo-archived release with a citable DOI, and a FORRT-tagged nanopublication chain on the [Science Live platform](https://platform.sciencelive4all.org).
+**DRAFT, not reviewed.** LifeWatch ERIC feasibility test for **morphological trait Essential Biodiversity Variables** from micro-CT: can open scans of specimens be segmented automatically and reproducibly, and do the traits match independently published values?
+
+**Data.** Faulwetter et al. (2013), ZooKeys 263, doi:10.3897/zookeys.263.4261 (HCMR); scans on Dryad doi:10.5061/dryad.84m54, mirrored on Zenodo record 4959912, CC0. The test uses two juvenile *Eunice* sp. scans (iodine- and PTA-stained) and an *Eunice roussaei* parapodium (about 165 MB, MD5-checked, downloaded at run time).
+
+**Result (22 October 2026).** Feasible with conditions.
+- Maximum dimension: 1.95 / 2.39 / 3.24 mm against the published 1.8 / 2.2 / 2.9 mm (+8 to +12 %), stable within 0.5 % when the segmentation threshold changes by ±20 %. The consistent bias suggests a difference in how the paper measured or rounded (its method is not stated).
+- Width about −20 %; volume and surface area move by 22–40 % with the threshold, and on the PTA scan automatic thresholds also capture the mounting pipette. These need trained (AI) segmentation.
+- Metadata pitfalls: slice spacing twice the stated pixel size (only in the scanner log), inverted greyscale for PTA images, and one pixel-size mismatch between paper and README.
+
+Details: `pipeline/REPORT.txt`; figure and numbers: `figures/traits/`.
 
 ---
 
@@ -24,18 +33,8 @@ This is a self-contained replication of the headline claim of the reference pape
 git clone https://github.com/annefou/microct-polychaete-traits.git
 cd microct-polychaete-traits
 pixi install
-pixi run snakemake --cores 1
+pixi run microct      # downloads the scans (~165 MB) to work/, segments, measures, draws the figure (~11 min CPU)
 ```
-
-(Pixi resolves `pixi.toml` against the per-platform `pixi.lock`, installs the env under `.pixi/`, and provides `pixi run` for any task without needing an `activate` step.)
-
-Or with Docker:
-
-```bash
-docker run --rm ghcr.io/annefou/microct-polychaete-traits:latest
-```
-
-The Jupyter Book version is at <https://annefou.github.io/microct-polychaete-traits/>.
 
 ## Built from a template
 

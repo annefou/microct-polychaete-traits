@@ -1,0 +1,539 @@
+{
+  "generated": "2026-10-22T19:47:27Z",
+  "source": "Faulwetter et al. 2013 ZooKeys 263 doi:10.3897/zookeys.263.4261; data doi:10.5061/dryad.84m54 (Zenodo 4959912, CC0)",
+  "specimens": {
+    "Eunice_sp_I2E": {
+      "description": "juvenile Eunice sp., whole animal, iodine-stained, in ethanol",
+      "n_slices": 473,
+      "raw_shape_zyx": [
+        473,
+        424,
+        344
+      ],
+      "voxel_xy_um_from_log": 2.16216,
+      "section_step": 2,
+      "voxel_z_um": 4.32432,
+      "voxel_isotropic_um_used": 4.32432,
+      "palette_inverted_in_bmp": false,
+      "thresholds": {
+        "otsu": 35.80445861816406,
+        "li": 30.446788787841797,
+        "triangle": 24.057605743408203
+      },
+      "published": {
+        "max_dimension_mm": 1.8,
+        "width_mm_approx": 0.3,
+        "voxel_um": 2.162,
+        "what": "juvenile Eunice sp., whole animal, iodine-stained, in ethanol"
+      },
+      "traits_baseline_otsu": {
+        "volume_mm3": 0.14095856569274234,
+        "surface_area_mm2": 3.350375749957576,
+        "max_feret_mm": 1.95142336722969,
+        "convex_hull_volume_mm3": 0.3087466709915989,
+        "pca_extent_mm": [
+          1.9189097869004272,
+          0.7253184170180808,
+          0.4938569280788438
+        ],
+        "max_feret_2d_pc12_mm": 1.951336356837303,
+        "elongation_pc1_pc2": 3.4151777502452414,
+        "sphericity": 0.39094733401037746,
+        "skeleton_length_raw_mm": 2.73761907258124,
+        "skeleton_length_mm": 2.176645776016164,
+        "width_core_median_mm": 0.24393140594595858,
+        "width_core_max_mm": 0.2959553993051683,
+        "core_opening_radius_um": 12.97296,
+        "dense_class_volume_mm3": 0.021065391564522563,
+        "dense_class_fraction": 0.14944385579547065
+      },
+      "sensitivity_otsu_x0.8_to_x1.2": {
+        "volume_mm3": {
+          "min": 0.12103893153432609,
+          "max": 0.1527771151974399,
+          "range_pct_of_base": 22.51596666519425
+        },
+        "surface_area_mm2": {
+          "min": 3.156053645537175,
+          "max": 3.772482863519899,
+          "range_pct_of_base": 18.39880849157082
+        },
+        "max_feret_mm": {
+          "min": 1.9493236443786164,
+          "max": 1.9546452582298037,
+          "range_pct_of_base": 0.2727042189077657
+        },
+        "convex_hull_volume_mm3": {
+          "min": 0.2906666652155364,
+          "max": 0.324494319061111,
+          "range_pct_of_base": 10.9564432668798
+        },
+        "max_feret_2d_pc12_mm": {
+          "min": 1.9492795216305814,
+          "max": 1.9542881973861015,
+          "range_pct_of_base": 0.2566792617772005
+        },
+        "elongation_pc1_pc2": {
+          "min": 3.1813596998915727,
+          "max": 3.4383634933276372,
+          "range_pct_of_base": 7.52534164342132
+        },
+        "sphericity": {
+          "min": 0.31367042307078785,
+          "max": 0.43790370336845097,
+          "range_pct_of_base": 31.77749775737451
+        },
+        "skeleton_length_raw_mm": {
+          "min": 2.5476804710553558,
+          "max": 2.7650667186328914,
+          "range_pct_of_base": 7.940704744307871
+        },
+        "skeleton_length_mm": {
+          "min": 1.989866778482125,
+          "max": 2.215363095142471,
+          "range_pct_of_base": 10.359807697927959
+        },
+        "width_core_median_mm": {
+          "min": 0.21430485282338896,
+          "max": 0.25081056,
+          "range_pct_of_base": 14.965562566674445
+        },
+        "width_core_max_mm": {
+          "min": 0.2926513711872747,
+          "max": 0.30257882277500914,
+          "range_pct_of_base": 3.3543742101146674
+        },
+        "core_opening_radius_um": {
+          "min": 12.97296,
+          "max": 12.97296,
+          "range_pct_of_base": 0.0
+        },
+        "dense_class_volume_mm3": {
+          "min": 0.019793405962288672,
+          "max": 0.022415572340142353,
+          "range_pct_of_base": 12.447745724650197
+        },
+        "dense_class_fraction": {
+          "min": 0.14672074617441117,
+          "max": 0.172963208173022,
+          "range_pct_of_base": 17.560080913949616
+        }
+      },
+      "alt_methods": {
+        "li": {
+          "volume_mm3": 0.1502888590648055,
+          "surface_area_mm2": 3.1561430155024484,
+          "max_feret_mm": 1.954142935523577,
+          "convex_hull_volume_mm3": 0.32066730751622075,
+          "pca_extent_mm": [
+            1.9190733017934891,
+            0.7608684653866137,
+            0.507961533246103
+          ],
+          "max_feret_2d_pc12_mm": 1.9538349445617254,
+          "elongation_pc1_pc2": 3.4322742435928393,
+          "sphericity": 0.4331237266155895,
+          "skeleton_length_raw_mm": 2.769893084230566,
+          "skeleton_length_mm": 2.221154680427,
+          "width_core_median_mm": 0.25325898725259743,
+          "width_core_max_mm": 0.30022119093889427,
+          "core_opening_radius_um": 12.97296,
+          "dense_class_volume_mm3": 0.022415572340142353,
+          "dense_class_fraction": 0.14914992687832315
+        },
+        "triangle": {
+          "volume_mm3": 0.15975314354576256,
+          "surface_area_mm2": 3.3100599406345386,
+          "max_feret_mm": 1.956304397710568,
+          "convex_hull_volume_mm3": 0.33712945016833595,
+          "pca_extent_mm": [
+            1.922184921753879,
+            0.7668689460937578,
+            0.5233373188390509
+          ],
+          "max_feret_2d_pc12_mm": 1.9559170394618552,
+          "elongation_pc1_pc2": 3.3934740425023766,
+          "sphericity": 0.43014466552713954,
+          "skeleton_length_raw_mm": 2.863434810123042,
+          "skeleton_length_mm": 2.3163158714567973,
+          "width_core_median_mm": 0.2510341210262107,
+          "width_core_max_mm": 0.3057755996020612,
+          "core_opening_radius_um": 12.97296,
+          "dense_class_volume_mm3": 0.023847263699808663,
+          "dense_class_fraction": 0.14927570857456976
+        }
+      },
+      "comparison": {
+        "max_dimension_vs_max_feret": {
+          "published_mm": 1.8,
+          "measured_mm": 1.95142336722969,
+          "rel_error_pct": 8.412409290538324,
+          "rel_error_range_pct_over_threshold_sweep": [
+            8.29575802103424,
+            8.591403234989093
+          ]
+        },
+        "width_vs_core_median_width": {
+          "published_mm": 0.3,
+          "measured_mm": 0.24393140594595858,
+          "rel_error_pct": -18.689531351347135,
+          "note": "published value is approximate ('ca 0.3 mm'); measured = median 2x inscribed radius along mid half of body skeleton"
+        }
+      },
+      "runtime_s": 86.6
+    },
+    "Eunice_sp_PTA": {
+      "description": "juvenile Eunice sp., whole animal, PTA-stained, in ethanol",
+      "n_slices": 542,
+      "raw_shape_zyx": [
+        542,
+        428,
+        404
+      ],
+      "voxel_xy_um_from_log": 2.29802,
+      "section_step": 2,
+      "voxel_z_um": 4.59604,
+      "voxel_isotropic_um_used": 4.59604,
+      "palette_inverted_in_bmp": true,
+      "thresholds": {
+        "otsu": 54.79801940917969,
+        "li": 24.1912841796875,
+        "triangle": 20.289398193359375
+      },
+      "published": {
+        "max_dimension_mm": 2.2,
+        "width_mm_approx": 0.3,
+        "voxel_um": 2.298,
+        "what": "juvenile Eunice sp., whole animal, PTA-stained, in ethanol"
+      },
+      "traits_baseline_otsu": {
+        "volume_mm3": 0.13843239323864243,
+        "surface_area_mm2": 3.7426002522261235,
+        "max_feret_mm": 2.393835422144098,
+        "convex_hull_volume_mm3": 0.443311470165112,
+        "pca_extent_mm": [
+          2.3392531462652286,
+          0.8543703112583383,
+          0.5374854692888051
+        ],
+        "max_feret_2d_pc12_mm": 2.349313608838911,
+        "elongation_pc1_pc2": 3.583923937985839,
+        "sphericity": 0.34578209403527915,
+        "skeleton_length_raw_mm": 3.3865661120281074,
+        "skeleton_length_mm": 2.7711083599285513,
+        "width_core_median_mm": 0.23632764386366314,
+        "width_core_max_mm": 0.2766800810721986,
+        "core_opening_radius_um": 13.788120000000001,
+        "dense_class_volume_mm3": 0.022647950435699855,
+        "dense_class_fraction": 0.1636029682493262
+      },
+      "sensitivity_otsu_x0.8_to_x1.2": {
+        "volume_mm3": {
+          "min": 0.10565839737086981,
+          "max": 0.16087015500538954,
+          "range_pct_of_base": 39.88355351145353
+        },
+        "surface_area_mm2": {
+          "min": 3.1400914117199057,
+          "max": 4.970583909322134,
+          "range_pct_of_base": 48.90964501254011
+        },
+        "max_feret_mm": {
+          "min": 2.3892557150782316,
+          "max": 2.398736636933232,
+          "range_pct_of_base": 0.39605570906409454
+        },
+        "convex_hull_volume_mm3": {
+          "min": 0.4194694854726612,
+          "max": 0.4645222778254569,
+          "range_pct_of_base": 10.16278517134143
+        },
+        "max_feret_2d_pc12_mm": {
+          "min": 2.346811068783313,
+          "max": 2.358117371967512,
+          "range_pct_of_base": 0.4812598514587736
+        },
+        "elongation_pc1_pc2": {
+          "min": 3.411493853698908,
+          "max": 3.771149867250179,
+          "range_pct_of_base": 10.035257995832279
+        },
+        "sphericity": {
+          "min": 0.21744331524272892,
+          "max": 0.45553891905914035,
+          "range_pct_of_base": 68.85712358261073
+        },
+        "skeleton_length_raw_mm": {
+          "min": 2.969154105625289,
+          "max": 3.3865661120281074,
+          "range_pct_of_base": 12.325523630567588
+        },
+        "skeleton_length_mm": {
+          "min": 2.486548487136686,
+          "max": 2.7711083599285513,
+          "range_pct_of_base": 10.268810736769678
+        },
+        "width_core_median_mm": {
+          "min": 0.158546670826545,
+          "max": 0.24664915091996356,
+          "range_pct_of_base": 37.27980301121467
+        },
+        "width_core_max_mm": {
+          "min": 0.2754558269202291,
+          "max": 0.28242282482427233,
+          "range_pct_of_base": 2.5180699228670704
+        },
+        "core_opening_radius_um": {
+          "min": 13.788120000000001,
+          "max": 13.788120000000001,
+          "range_pct_of_base": 0.0
+        },
+        "dense_class_volume_mm3": {
+          "min": 0.022563972052954313,
+          "max": 0.024533240857128418,
+          "range_pct_of_base": 8.695130315500675
+        },
+        "dense_class_fraction": {
+          "min": 0.15250337053698054,
+          "max": 0.2135558802179526,
+          "range_pct_of_base": 37.31748288816483
+        }
+      },
+      "alt_methods": {
+        "li": {
+          "volume_mm3": 1.1783584537798688,
+          "surface_area_mm2": 7.5983196389754095,
+          "max_feret_mm": 2.612548585582904,
+          "convex_hull_volume_mm3": 1.2225258445681064,
+          "pca_extent_mm": [
+            2.4975959581736746,
+            0.903713660628434,
+            0.9008818016757737
+          ],
+          "max_feret_2d_pc12_mm": 2.6003373858127103,
+          "elongation_pc1_pc2": 3.475664453235898,
+          "sphericity": 0.7100433210648225,
+          "skeleton_length_raw_mm": 2.115364126767809,
+          "skeleton_length_mm": 1.9114518527562123,
+          "width_core_median_mm": 0.7642151621920422,
+          "width_core_max_mm": 0.8360751348960853,
+          "core_opening_radius_um": 13.788120000000001,
+          "dense_class_volume_mm3": 0.038576465233729706,
+          "dense_class_fraction": 0.03273746211094459
+        },
+        "triangle": {
+          "volume_mm3": 1.2272712501994594,
+          "surface_area_mm2": 7.9060573338191995,
+          "max_feret_mm": 2.617330784427189,
+          "convex_hull_volume_mm3": 1.385063395217152,
+          "pca_extent_mm": [
+            2.499260761227628,
+            1.0367750426480973,
+            0.9356533876081466
+          ],
+          "max_feret_2d_pc12_mm": 2.603977511597875,
+          "elongation_pc1_pc2": 3.412953759876454,
+          "sphericity": 0.7011611943194491,
+          "skeleton_length_raw_mm": 2.063812169686412,
+          "skeleton_length_mm": 1.902349969708247,
+          "width_core_median_mm": 0.7821104331785056,
+          "width_core_max_mm": 0.850751709528898,
+          "core_opening_radius_um": 13.788120000000001,
+          "dense_class_volume_mm3": 0.038576465233729706,
+          "dense_class_fraction": 0.031432713206196394
+        }
+      },
+      "comparison": {
+        "max_dimension_vs_max_feret": {
+          "published_mm": 2.2,
+          "measured_mm": 2.393835422144098,
+          "rel_error_pct": 8.810701006549902,
+          "rel_error_range_pct_over_threshold_sweep": [
+            8.602532503555976,
+            9.033483496965077
+          ]
+        },
+        "width_vs_core_median_width": {
+          "published_mm": 0.3,
+          "measured_mm": 0.23632764386366314,
+          "rel_error_pct": -21.224118712112283,
+          "note": "published value is approximate ('ca 0.3 mm'); measured = median 2x inscribed radius along mid half of body skeleton"
+        }
+      },
+      "runtime_s": 125.9
+    },
+    "Eunice_roussaei": {
+      "description": "Eunice roussaei, dissected mid-body parapodium, HMDS-dried, in air",
+      "n_slices": 451,
+      "raw_shape_zyx": [
+        451,
+        839,
+        889
+      ],
+      "voxel_xy_um_from_log": 2.87835,
+      "section_step": 2,
+      "voxel_z_um": 5.7567,
+      "voxel_isotropic_um_used": 5.7567,
+      "palette_inverted_in_bmp": false,
+      "thresholds": {
+        "otsu": 17.44356918334961,
+        "li": 5.2670793533325195,
+        "triangle": 4.243030548095703
+      },
+      "published": {
+        "max_dimension_mm": 2.9,
+        "voxel_um": 2.878,
+        "what": "Eunice roussaei, dissected mid-body parapodium, HMDS-dried, in air"
+      },
+      "traits_baseline_otsu": {
+        "volume_mm3": 1.4577495904950721,
+        "surface_area_mm2": 36.594979440576864,
+        "max_feret_mm": 3.2374464745938734,
+        "convex_hull_volume_mm3": 5.045595105677598,
+        "pca_extent_mm": [
+          2.9755442851070195,
+          3.226748013664971,
+          1.391408740019985
+        ],
+        "max_feret_2d_pc12_mm": 3.2348612686844285,
+        "elongation_pc1_pc2": 1.627640497945975,
+        "sphericity": 0.16989655355097386,
+        "skeleton_length_raw_mm": 8.134995803661063,
+        "skeleton_length_mm": 6.776394926267802,
+        "width_core_median_mm": 0.13127295739336414,
+        "width_core_max_mm": 0.5863927323719489,
+        "core_opening_radius_um": 17.2701,
+        "dense_class_volume_mm3": 0.11589029214446697,
+        "dense_class_fraction": 0.07949945100317882
+      },
+      "sensitivity_otsu_x0.8_to_x1.2": {
+        "volume_mm3": {
+          "min": 1.1308321404433577,
+          "max": 1.6909491570465147,
+          "range_pct_of_base": 38.42340414672547
+        },
+        "surface_area_mm2": {
+          "min": 31.563141257340074,
+          "max": 42.239104258077326,
+          "range_pct_of_base": 29.17329962726975
+        },
+        "max_feret_mm": {
+          "min": 3.2349017445975035,
+          "max": 3.23999943421452,
+          "range_pct_of_base": 0.15746019762862637
+        },
+        "convex_hull_volume_mm3": {
+          "min": 5.01258421366693,
+          "max": 5.075366746518359,
+          "range_pct_of_base": 1.2443038241570856
+        },
+        "max_feret_2d_pc12_mm": {
+          "min": 3.2295672145340473,
+          "max": 3.2396335735879727,
+          "range_pct_of_base": 0.311183640280785
+        },
+        "elongation_pc1_pc2": {
+          "min": 1.5674731570549754,
+          "max": 1.627640497945975,
+          "range_pct_of_base": 3.6965989090913376
+        },
+        "sphericity": {
+          "min": 0.12427054043796917,
+          "max": 0.21746578583207848,
+          "range_pct_of_base": 54.85411177934699
+        },
+        "skeleton_length_raw_mm": {
+          "min": 6.790725254623177,
+          "max": 9.118611603757943,
+          "range_pct_of_base": 28.615704363204795
+        },
+        "skeleton_length_mm": {
+          "min": 5.61465254752034,
+          "max": 7.472463041612648,
+          "range_pct_of_base": 27.41591235910337
+        },
+        "width_core_median_mm": {
+          "min": 0.11221718767949686,
+          "max": 0.2993484,
+          "range_pct_of_base": 142.55122763766016
+        },
+        "width_core_max_mm": {
+          "min": 0.42240215303400147,
+          "max": 0.6291417339250036,
+          "range_pct_of_base": 35.25616357057223
+        },
+        "core_opening_radius_um": {
+          "min": 17.2701,
+          "max": 17.2701,
+          "range_pct_of_base": 0.0
+        },
+        "dense_class_volume_mm3": {
+          "min": 0.10607760437162674,
+          "max": 0.12111713753680457,
+          "range_pct_of_base": 12.977388258224249
+        },
+        "dense_class_fraction": {
+          "min": 0.07162671747526285,
+          "max": 0.0938049075347625,
+          "range_pct_of_base": 27.8972870625394
+        }
+      },
+      "alt_methods": {
+        "li": {
+          "volume_mm3": 2.062206845793677,
+          "surface_area_mm2": 30.57926408986517,
+          "max_feret_mm": 3.258190489931956,
+          "convex_hull_volume_mm3": 5.430202373704544,
+          "pca_extent_mm": [
+            3.0004733702600985,
+            3.242410935208355,
+            1.4371913204326452
+          ],
+          "max_feret_2d_pc12_mm": 3.2581539304040876,
+          "elongation_pc1_pc2": 1.4452884593152642,
+          "sphericity": 0.2562193416926965,
+          "skeleton_length_raw_mm": 6.013761497765445,
+          "skeleton_length_mm": 5.0466861167334125,
+          "width_core_median_mm": 0.37289702620496157,
+          "width_core_max_mm": 0.6020088119928478,
+          "core_opening_radius_um": 17.2701,
+          "dense_class_volume_mm3": 0.13261646448453557,
+          "dense_class_fraction": 0.06430803231743504
+        },
+        "triangle": {
+          "volume_mm3": 2.134944090237532,
+          "surface_area_mm2": 31.808665343630366,
+          "max_feret_mm": 3.2627185976927326,
+          "convex_hull_volume_mm3": 5.517236449485595,
+          "pca_extent_mm": [
+            3.0163647117687447,
+            3.24462481837582,
+            1.4413004116874482
+          ],
+          "max_feret_2d_pc12_mm": 3.26243968335677,
+          "elongation_pc1_pc2": 1.4207471079721312,
+          "sphericity": 0.2520749453298382,
+          "skeleton_length_raw_mm": 6.211475863685575,
+          "skeleton_length_mm": 5.168667789657711,
+          "width_core_median_mm": 0.3810743191871758,
+          "width_core_max_mm": 0.6077068746148591,
+          "core_opening_radius_um": 17.2701,
+          "dense_class_volume_mm3": 0.1388805519528692,
+          "dense_class_fraction": 0.06505114236383468
+        }
+      },
+      "comparison": {
+        "max_dimension_vs_max_feret": {
+          "published_mm": 2.9,
+          "measured_mm": 3.2374464745938734,
+          "rel_error_pct": 11.636085330823223,
+          "rel_error_range_pct_over_threshold_sweep": [
+            11.548336020603571,
+            11.724118421190346
+          ]
+        }
+      },
+      "runtime_s": 447.0
+    }
+  }
+}

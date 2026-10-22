@@ -1,0 +1,141 @@
+MICRO-CT SPECIES-TRAIT EBV FEASIBILITY TEST (prototype, 2026-10-22)
+=====================================================================
+Question: can open micro-CT volumes of marine invertebrates be segmented reproducibly,
+turned into morphological traits, and matched to independently published measurements?
+
+VERDICT: FEASIBLE WITH CONDITIONS
+  - Size traits (max dimension / Feret diameter) are reproducible: they vary by <=0.5 %
+    over a threshold sweep of x0.8-x1.2 and agree across Otsu, Li and Triangle thresholds
+    for 2 of 3 scans. They agree with published values to within +8 to +12 %, with a
+    consistent positive bias.
+  - Volume, surface area, sphericity and width are NOT yet robust with a global threshold.
+    The sweep changes them by 15-70 %. They need calibrated grey values, standard staining
+    and protocols, or a trained segmentation model.
+  - The published reference values are coarse (Table 1 gives 0.1 mm precision, "ca" widths)
+    and come from one paper. This is a plausibility check, not a validation.
+
+DATA USED (all CC0)
+  Faulwetter S, Vasileiadou A, Kouratoras M, Dailianis T, Arvanitidis C (2013) Micro-computed
+  tomography: introducing new dimensions to taxonomy. ZooKeys 263:1-45.
+  doi:10.3897/zookeys.263.4261. Data: Dryad doi:10.5061/dryad.84m54 = Zenodo record 4959912
+  (CC0; 9 polychaete scans, 46 MB - 1.7 GB each, BMP/PNG slice stacks + SkyScan .log).
+  Specimens processed (downloads 47 + 64 + 52 MB zipped; deleted after the run):
+    Eunice_sp_I2E   juvenile Eunice sp., whole animal, iodine-stained, 2.162 um px, 473 slices
+    Eunice_sp_PTA   juvenile Eunice sp., whole animal, PTA-stained,    2.298 um px, 542 slices
+    Eunice_roussaei dissected mid-body parapodium, HMDS-dried, in air,  2.878 um px, 451 slices
+  Published reference values:
+    - ZooKeys Table 1, "Size (mm)" (footnote: "maximum dimension (in any direction) of the
+      scanned part of the specimen"): I2E 1.8, PTA 2.2, E. roussaei 2.9.
+    - Results text: Eunice sp. juveniles have "width ca 0.3 mm".
+
+PIPELINE (pipeline/traits_pipeline.py; classical image processing, no AI; CPU 1.5-7.5 min per specimen)
+  load raw values -> voxel size from .log -> isotropic resampling -> 3D median + Gaussian
+  -> Otsu -> 3D closing -> largest component -> hole filling per slice along each axis + 3D
+  -> traits: volume, surface area (marching cubes), 3D max Feret, 2D max Feret in the PC1-2
+  plane, PCA extents, elongation, sphericity, body centre-line length (skeleton of the body
+  after a 13-17 um opening, longest path, smoothed), body width (2 x inscribed radius along
+  the centre-line, mid half), and one structure-specific trait: volume of the high-density
+  class (3-class multi-Otsu inside the mask: jaws, aciculae, chaetae, sclerotised parts).
+  Sensitivity: Otsu x{0.8, 0.9, 1.0, 1.1, 1.2}, plus Li and Triangle as alternative methods.
+
+RESULTS (baseline Otsu; full detail in outputs/results.json; figure in outputs/figure_traits.png)
+  Specimen         Trait                   Measured   Published   Rel. error   Sweep range
+  Eunice_sp_I2E    max dimension (3D)      1.95 mm    1.8 mm      +8.4 %       +8.3..+8.6 %
+                   body width (median)     0.244 mm   ca 0.3 mm   -19 %        sweep +/-15 % of value
+                   centre-line length      2.18 mm    -           -            10 %
+                   volume                  0.141 mm3  -           -            22 %
+  Eunice_sp_PTA    max dimension (3D)      2.39 mm    2.2 mm      +8.8 %       +8.6..+9.0 %
+                   body width (median)     0.236 mm   ca 0.3 mm   -21 %        37 %
+                   centre-line length      2.77 mm    -           -            10 %
+                   volume                  0.138 mm3  -           -            40 %
+  Eunice_roussaei  max dimension (3D)      3.24 mm    2.9 mm      +11.6 %      +11.5..+11.7 %
+  (parapodium)     volume                  1.46 mm3   -           -            38 %
+                   centre-line length: not meaningful for a parapodium (reported, not used)
+  High-density ("hard parts") class: 0.021 / 0.023 / 0.116 mm3 (15 / 16 / 8 % of the mask).
+  Not validated: no published reference exists.
+
+  Reading the errors:
+  - The bias is +8 to +12 % for all three scans and the 2D Feret gives nearly the same values.
+    So it is probably a definition or rounding difference, not noise. Possible causes: authors
+    measured a rendered view, excluded antennae or protruding chaetae, or rounded down.
+    The paper does not state its measurement method, so this cannot be settled.
+  - Width: the published value is approximate ("ca"). Our median body width excludes parapodia.
+  - Volume: thresholds chosen by different automatic methods disagree badly for the PTA scan.
+    Li and Triangle thresholds also capture the ethanol-filled pipette tip (1.2 mm3 against
+    0.14 mm3). Without a fixed protocol, automatic method choice can silently corrupt a trait.
+
+METADATA PITFALLS FOUND (each would silently corrupt an operational trait product)
+  1. Anisotropic voxels hidden in the log. "Section to Section Step=2" means the z spacing is
+     2 x the stated pixel size (4.32 um, not 2.16 um). If z is treated as isotropic, lengths
+     along z come out at half their true value.
+  2. Inverted palette. The PTA BMPs store an inverted greyscale palette: converting to grey
+     inverts the densities, so raw indices must be used.
+  3. Inconsistent metadata. Phyllodoce lineata is listed at 1.645 um px in ZooKeys Table 1
+     but 1.096 um px in the dataset README (1.096 is the Phyllodoce sp. value). This was not
+     processed here, but it shows the need for machine-readable, authoritative voxel size.
+  4. Measurement definitions are free text ("maximum dimension in any direction",
+     "width ca"), with no method or uncertainty.
+
+OTHER DATA SOURCES CHECKED
+  - LifeWatchGreece MicroCT VLab (https://microct.portal.lifewatchgreece.eu/): unreachable
+    over HTTPS and HTTP from this machine, at two attempts (start and middle of the session),
+    connection error (curl code 7). Its offer (datasets, API, formats, licences) could not be
+    assessed.
+  - MorphoSource API (taxonomy_gbif facet): Annelida has 20 volumetric image series
+    (11 "open", 9 "restricted_download") and 37 meshes; Mollusca has 1293 media. The API
+    licence field is empty, and downloads need an account or API key. Not used.
+  - HCMR trait datasets published as tables, without volumes:
+    "Micro-CT morphological traits for two invertebrate species in 2023" (Chondrilla nucula,
+    Hexaplex trunculus; MARBEFES; CC BY 4.0; marineinfo dataset 8885), and Glycera tridactyla /
+    Phascolosoma stephensoni micro-CT morphological data (doi:10.25607/mqd09f, MedOBIS IPT,
+    CC BY 4.0). These are ideal validation targets if HCMR releases the matching volumes.
+  - Zenodo 8404257 (insect micro-CT with deep-learning segmentation, CC0) was suggested as
+    a reference for AI segmentation. It was not processed.
+
+WHAT AN OPERATIONAL TRAIT EBV SERVICE WOULD NEED
+  - Standard acquisition classes, e.g. 1-3 um, 5-10 um and 10-25 um voxels by body size,
+    with a declared minimum of voxels per body width (here about 50-110 voxels per 0.24 mm
+    width was ample for size traits).
+  - Machine-readable metadata travelling with every volume: true 3D voxel spacing (z step),
+    bit depth, LUT, reconstruction parameters, staining and preparation (fixative, stain,
+    HMDS or wet, medium), scanner, voxel unit. Use NeXus/OME-Zarr or NRRD with headers
+    rather than 8-bit BMP stacks plus a log.
+  - Calibration: a density phantom or a reference medium in each scan so that thresholds
+    transfer between scans. Volume and surface traits are not comparable without it.
+  - Trait definitions as controlled vocabulary with method and uncertainty: body length
+    (centre-line), max Feret, width at a given segment, volume, hard-part volume. Map them to
+    an EBV "species traits" ontology (e.g. OBA / PATO / Darwin Core MeasurementOrFact).
+  - Annotations for AI: voxel-level labels (body, parapodia, chaetae, jaws, medium,
+    container) on a stratified set of taxa, stains and voxel sizes. Hundreds of labelled
+    volumes are needed before a 3D U-Net / nnU-Net is worth training; jaws, chaetae and
+    segment counting are where AI adds value over thresholds.
+  - FAIR packaging: one RO-Crate per specimen as a FAIR Digital Object, linking the raw
+    volume, the processing workflow (versioned, containerised), masks, the trait table
+    (DwC-MoF) and the provenance of each trait value, with the specimen voucher, AphiaID
+    and the occurrence (collection site).
+  - Spatial indexing of specimen collection locations on HEALPix (e.g. order 8-10), so trait
+    values aggregate to EBV grid cells. ZooKeys Table 1 already gives coordinates for most
+    specimens (e.g. 35.4158 N, 24.9875 E).
+  - Quality control: report every trait with its threshold-sweep range (as done here), and
+    flag traits whose range exceeds a tolerance (e.g. 5 %).
+
+WHAT HCMR / LIFEWATCHGREECE MICROCT VLAB WOULD CONTRIBUTE
+  - A curated, licensed collection of marine invertebrate volumes with consistent protocols:
+    the HCMR team (Faulwetter, Keklikoglou, Dailianis, Arvanitidis) produced these data and
+    the 2019 best-practice handbook.
+  - Matching trait tables already published as DwC datasets (MARBEFES, Glycera), which can
+    serve as ground truth for automated pipelines once the volumes are linked.
+  - A natural host for the operational e-Service, as a VLab workflow step: volume -> mask ->
+    traits -> RO-Crate.
+  - Taxonomic expertise to create the AI training annotations. The Spanish group's
+    AI-based 3D pattern recognition on polychaetes could supply or benchmark the models.
+  These contributions could not be checked against the live VLab, which was unreachable.
+
+REPRODUCE
+  python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+  .venv/bin/python -I pipeline/fetch_faulwetter2013.py .     # ~165 MB download, MD5-checked
+  .venv/bin/python -I pipeline/quicklook.py .                # optional QC images
+  .venv/bin/python -I pipeline/traits_pipeline.py .          # ~11 min CPU
+  .venv/bin/python -I pipeline/make_figure.py .
+  Raw data/ was deleted after the run. outputs/masks/*.npz holds the derived masks and
+  smoothed volumes (24 MB).
