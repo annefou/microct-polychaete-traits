@@ -19,7 +19,7 @@
 Format: starts with `10.` — bare DOI, **NOT** `https://doi.org/...` form.
 
 ```
-{{PAPER_DOI}}
+10.3897/zookeys.263.4261
 ```
 
 ### Quote mode (radio button)

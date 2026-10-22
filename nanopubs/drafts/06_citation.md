@@ -42,7 +42,7 @@ Write the chosen type in the block below (a vocabulary label such as `cites as a
 Must be a DOI (`https://doi.org/...`): the first citation is the work the chain is about. Leave the placeholder to use the paper in `CITATION.cff`. Links to other works, such as another chain's nanopublication, go under *Additional citations* below.
 
 ```
-https://doi.org/{{PAPER_DOI}}
+https://doi.org/10.3897/zookeys.263.4261
 ```
 
 #### Additional citations (optional)

@@ -2,13 +2,13 @@
 
 > This is a working scratchpad for the paper-analysis phase. The output of this file feeds the Quote / AIDA / Claim drafts. It is not itself a nanopub.
 
-**Reference paper:** {{PAPER_TITLE}}
+**Reference paper:** Micro-computed tomography: Introducing new dimensions to taxonomy
 
-**DOI:** {{PAPER_DOI}}
+**DOI:** 10.3897/zookeys.263.4261
 
 **Authors:** _add._
 
-**Year:** {{PAPER_YEAR}}
+**Year:** 2013
 
 ## Headline claim
 
